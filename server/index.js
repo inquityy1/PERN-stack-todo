@@ -21,7 +21,7 @@ app.post("/todos", async (req, res) => {
 
     res.json(newTodo.rows[0]);
   } catch (err) {
-    console.log("[server/index.js] create a todo error", err.message);
+    console.error("[server/index.js] create a todo error", err.message);
   }
 });
 
@@ -32,7 +32,7 @@ app.get("/todos", async (req, res) => {
     const allTodos = await pool.query("SELECT * FROM todo");
     res.json(allTodos.rows);
   } catch (err) {
-    console.log("[server/index.js] get all todos error", err.message);
+    console.error("[server/index.js] get all todos error", err.message);
   }
 });
 
@@ -47,7 +47,7 @@ app.get("/todos/:id", async (req, res) => {
 
     res.json(todo.rows[0]);
   } catch (err) {
-    console.log("[server/index.js] get a specific todo", err.message);
+    console.error("[server/index.js] get a specific todo", err.message);
   }
 });
 
@@ -64,7 +64,7 @@ app.put("/todos/:id", async (req, res) => {
 
     res.json("Todo was edited");
   } catch (err) {
-    console.log("[server/index.js] edit a specific todo", err.message);
+    console.error("[server/index.js] edit a specific todo", err.message);
   }
 });
 
@@ -79,10 +79,10 @@ app.delete("/todos/:id", async (req, res) => {
 
     res.json("Todo was deleted!");
   } catch (err) {
-    console.log("[server/index.js] delete a specific todo", err.message);
+    console.error("[server/index.js] delete a specific todo", err.message);
   }
 });
 
 app.listen(5000, () => {
-  console.log("server has started on port 5000");
+  console.error("server has started on port 5000");
 });

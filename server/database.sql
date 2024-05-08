@@ -1,3 +1,5 @@
+SELECT * FROM todo;
+
 -- CREATE DATABASE perntodo;
 
 -- CREATE TABLE todo (
@@ -10,4 +12,4 @@
 --     'Hello world!'
 -- );
 
-SELECT * FROM todo;
+-- DELETE FROM todo WHERE todo_id = 6;
